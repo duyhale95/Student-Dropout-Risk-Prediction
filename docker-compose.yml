@@ -1,0 +1,36 @@
+services:
+  backend:
+    build:
+      context: ./FastAPI
+      dockerfile: Dockerfile
+    container_name: ml_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      # Persist SQLite database ra ngoài container
+      - db_data:/app/data
+    environment:
+      - DATABASE_URL=sqlite:////app/data/todosapp.db
+    restart: unless-stopped
+    networks:
+      - ml_network
+
+  frontend:
+    build:
+      context: ./React/student-app
+      dockerfile: Dockerfile
+    container_name: ml_frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - ml_network
+
+volumes:
+  db_data:
+
+networks:
+  ml_network:
+    driver: bridge

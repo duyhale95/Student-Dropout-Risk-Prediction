@@ -1,0 +1,9 @@
+# Bỏ qua thư mục node_modules
+node_modules/
+
+# Các file khác có thể bỏ qua (tùy chọn)
+.env
+.vscode/
+*.log
+dist/
+build/
