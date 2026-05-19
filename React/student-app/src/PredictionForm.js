@@ -14,17 +14,17 @@ import api from './api';
 
 /* ─── Data arrays ────────────────────────────────────────────────────────── */
 const QUALIFICATION_OPTIONS = [
-  { value: 5,  label: 'Higher Education — Doctorate' },
+  { value: 5, label: 'Higher Education — Doctorate' },
   { value: 34, label: 'Higher Education — Doctorate (3rd cycle)' },
-  { value: 4,  label: "Higher Education — Master's degree" },
+  { value: 4, label: "Higher Education — Master's degree" },
   { value: 33, label: "Higher Education — Master's degree (2nd cycle)" },
-  { value: 3,  label: 'Higher Education — Degree' },
+  { value: 3, label: 'Higher Education — Degree' },
   { value: 30, label: 'Higher Education — Degree (1st cycle)' },
-  { value: 2,  label: "Higher Education — Bachelor's degree" },
+  { value: 2, label: "Higher Education — Bachelor's degree" },
   { value: 31, label: 'Specialized Higher Studies Course' },
   { value: 32, label: 'Professional Higher Technical Course' },
-  { value: 6,  label: 'Frequency of Higher Education' },
-  { value: 1,  label: 'Secondary Education — 12th Year or Equivalent' },
+  { value: 6, label: 'Frequency of Higher Education' },
+  { value: 1, label: 'Secondary Education — 12th Year or Equivalent' },
   { value: 29, label: 'Technological Specialization Course' },
   { value: 15, label: 'Complementary High School Course' },
   { value: 16, label: 'Technical-Professional Course' },
@@ -36,52 +36,52 @@ const QUALIFICATION_OPTIONS = [
   { value: 13, label: 'General Commerce Course' },
   { value: 23, label: 'Supplementary Accounting and Administration' },
   { value: 22, label: 'General Course of Administration and Commerce' },
-  { value: 7,  label: '12th Year — Not Completed' },
+  { value: 7, label: '12th Year — Not Completed' },
   { value: 17, label: 'Complementary High School — Not Concluded' },
-  { value: 8,  label: '11th Year — Not Completed' },
+  { value: 8, label: '11th Year — Not Completed' },
   { value: 10, label: 'Other — 11th Year of Schooling' },
   { value: 12, label: '10th Year of Schooling' },
   { value: 20, label: '9th Year — Not Completed' },
   { value: 21, label: '8th Year of Schooling' },
   { value: 18, label: '7th Year of Schooling' },
-  { value: 9,  label: '7th Year (Old)' },
+  { value: 9, label: '7th Year (Old)' },
   { value: 26, label: 'Can Read Without 4th Year' },
   { value: 25, label: 'Cannot Read or Write' },
   { value: 24, label: 'Unknown' },
 ];
 
 const OCCUPATION_OPTIONS = [
-  { value: 2,  label: 'Legislative / Executive Managers' },
+  { value: 2, label: 'Legislative / Executive Managers' },
   { value: 17, label: 'Admin & Commercial Directors' },
   { value: 18, label: 'Hotel, Trade & Services Directors' },
-  { value: 3,  label: 'Intellectual & Scientific Specialists' },
+  { value: 3, label: 'Intellectual & Scientific Specialists' },
   { value: 19, label: 'Sciences & Engineering Specialists' },
   { value: 20, label: 'Health Professionals' },
   { value: 21, label: 'Teachers' },
   { value: 22, label: 'Finance & Accounting Specialists' },
-  { value: 4,  label: 'Intermediate Level Technicians' },
+  { value: 4, label: 'Intermediate Level Technicians' },
   { value: 23, label: 'Science & Engineering Technicians' },
   { value: 24, label: 'Health Technicians' },
   { value: 25, label: 'Legal, Social & Cultural Technicians' },
   { value: 26, label: 'ICT Technicians' },
-  { value: 5,  label: 'Administrative Staff' },
+  { value: 5, label: 'Administrative Staff' },
   { value: 27, label: 'Office & Data Processing Workers' },
   { value: 28, label: 'Accounting & Statistical Operators' },
   { value: 29, label: 'Other Admin Support Staff' },
-  { value: 6,  label: 'Personal Services & Sellers' },
+  { value: 6, label: 'Personal Services & Sellers' },
   { value: 30, label: 'Personal Service Workers' },
   { value: 31, label: 'Sellers' },
   { value: 32, label: 'Personal Care Workers' },
   { value: 33, label: 'Protection & Security Personnel' },
-  { value: 7,  label: 'Agriculture & Forestry Workers' },
+  { value: 7, label: 'Agriculture & Forestry Workers' },
   { value: 34, label: 'Market-oriented Farmers' },
   { value: 35, label: 'Subsistence Farmers & Fishermen' },
-  { value: 8,  label: 'Industry & Construction Workers' },
+  { value: 8, label: 'Industry & Construction Workers' },
   { value: 36, label: 'Skilled Construction Workers' },
   { value: 37, label: 'Skilled Metalworking Workers' },
   { value: 38, label: 'Electrical & Electronics Workers' },
   { value: 39, label: 'Food & Crafts Workers' },
-  { value: 9,  label: 'Machine Operators & Assembly' },
+  { value: 9, label: 'Machine Operators & Assembly' },
   { value: 40, label: 'Fixed Plant & Machine Operators' },
   { value: 41, label: 'Assembly Workers' },
   { value: 42, label: 'Vehicle & Equipment Operators' },
@@ -94,51 +94,61 @@ const OCCUPATION_OPTIONS = [
   { value: 14, label: 'Armed Forces Officers' },
   { value: 15, label: 'Armed Forces Sergeants' },
   { value: 16, label: 'Other Armed Forces Personnel' },
-  { value: 1,  label: 'Student' },
+  { value: 1, label: 'Student' },
   { value: 12, label: 'Other Situation' },
   { value: 13, label: '(Not Specified)' },
 ];
 
 const APP_MODE_OPTIONS = [
-  { value: 1,  label: '1st Phase — General Contingent' },
-  { value: 6,  label: '2nd Phase — General Contingent' },
-  { value: 7,  label: '3rd Phase — General Contingent' },
-  { value: 3,  label: '1st Phase — Special (Azores)' },
-  { value: 12, label: 'Over 23 Years Old' },
+  // --- Standard Entry Phases ---
+  { value: 1, label: '1st Phase — General Contingent' },
+  { value: 6, label: '2nd Phase — General Contingent' },
+  { value: 7, label: '3rd Phase — General Contingent' },
+
+  // --- Transfers & Changes ---
   { value: 13, label: 'Transfer' },
   { value: 14, label: 'Change of Course' },
   { value: 16, label: 'Change Institution / Course' },
   { value: 18, label: 'Change Institution (International)' },
-  { value: 8,  label: 'International Student' },
-  { value: 4,  label: 'Holders of Other Higher Course' },
-  { value: 5,  label: 'Holders of Post-Secondary Course' },
+
+  // --- Special Groups ---
+  { value: 12, label: 'Over 23 Years Old' },
+  { value: 8, label: 'International Student' },
+  { value: 3, label: '1st Phase — Special (Azores)' },
+
+  // --- Prior Qualification Holders ---
+  { value: 4, label: 'Holders of Other Higher Course' },
+  { value: 5, label: 'Holders of Post-Secondary Course' },
   { value: 15, label: 'Tech Specialization Diploma' },
   { value: 17, label: 'Short Cycle Diploma Holders' },
-  { value: 2,  label: 'Ordinance No. 612/93' },
-  { value: 9,  label: 'Ordinance No. 854-B/99' },
+
+  // --- Special Ordinances ---
+  { value: 2, label: 'Ordinance No. 612/93' },
+  { value: 9, label: 'Ordinance No. 854-B/99' },
   { value: 10, label: 'Ordinance No. 533-A/99 (b2)' },
   { value: 11, label: 'Ordinance No. 533-A/99 (b3)' },
 ];
 
 const COURSE_OPTIONS = [
-  { value: 7,  label: 'Informatics Engineering' },
-  { value: 9,  label: 'Management' },
+  { value: 14, label: 'Advertising & Marketing Mgmt.' },
+  { value: 4, label: 'Agronomy' },
+  { value: 2, label: 'Animation & Multimedia Design' },
+  { value: 1, label: 'Biofuel Production Tech.' },
+  { value: 5, label: 'Communication Design' },
+  { value: 7, label: 'Computer Science' },
+  { value: 16, label: 'Education (Basic Education)' },
+  { value: 8, label: 'Equiniculture' },
+  { value: 15, label: 'Journalism & Communication' },
+  { value: 9, label: 'Management' },
   { value: 17, label: 'Management (Evening)' },
   { value: 12, label: 'Nursing' },
   { value: 13, label: 'Oral Hygiene' },
-  { value: 6,  label: 'Veterinary Nursing' },
-  { value: 4,  label: 'Agronomy' },
-  { value: 8,  label: 'Equiniculture' },
-  { value: 1,  label: 'Biofuel Production Tech.' },
-  { value: 2,  label: 'Animation & Multimedia Design' },
-  { value: 5,  label: 'Communication Design' },
-  { value: 14, label: 'Advertising & Marketing Mgmt.' },
-  { value: 15, label: 'Journalism & Communication' },
   { value: 10, label: 'Social Service' },
-  { value: 3,  label: 'Social Service (Evening)' },
+  { value: 3, label: 'Social Service (Evening)' },
   { value: 11, label: 'Tourism' },
-  { value: 16, label: 'Basic Education' },
+  { value: 6, label: 'Veterinary Nursing' },
 ];
+
 
 /* ─── Reusable: labeled select using FormControl ─────────────────────────── */
 const LabeledSelect = ({ label, name, value, onChange, options, helperText }) => (
@@ -427,22 +437,28 @@ const PredictionForm = () => {
     const isDrop = result === 'Dropout';
     const isGrad = result === 'Graduate';
     const cfg = isErr
-      ? { bg: 'linear-gradient(135deg,#FFF5F5,#FFE8E8)', bd: '#D32F2F',
-          icon: <ErrorOutline sx={{ fontSize: 52, color: '#D32F2F' }} />,
-          chip: null, title: 'Prediction Error', desc: result.error, tc: '#D32F2F' }
+      ? {
+        bg: 'linear-gradient(135deg,#FFF5F5,#FFE8E8)', bd: '#D32F2F',
+        icon: <ErrorOutline sx={{ fontSize: 52, color: '#D32F2F' }} />,
+        chip: null, title: 'Prediction Error', desc: result.error, tc: '#D32F2F'
+      }
       : isDrop
-      ? { bg: 'linear-gradient(135deg,#FFF5F5,#FFECEC)', bd: '#EF5350',
+        ? {
+          bg: 'linear-gradient(135deg,#FFF5F5,#FFECEC)', bd: '#EF5350',
           icon: <SentimentVeryDissatisfied sx={{ fontSize: 52, color: '#D32F2F' }} />,
           chip: { label: 'HIGH RISK', color: 'error' },
           title: 'Dropout Risk Detected',
           desc: 'This student is at risk of dropping out. Early intervention is strongly recommended.',
-          tc: '#C62828' }
-      : { bg: 'linear-gradient(135deg,#F0FFF4,#E8F5E9)', bd: '#43A047',
+          tc: '#C62828'
+        }
+        : {
+          bg: 'linear-gradient(135deg,#F0FFF4,#E8F5E9)', bd: '#43A047',
           icon: <SentimentVerySatisfied sx={{ fontSize: 52, color: '#2E7D32' }} />,
           chip: { label: 'LOW RISK', color: 'success' },
           title: 'Graduation Predicted',
           desc: 'This student is predicted to successfully graduate.',
-          tc: '#1B5E20' };
+          tc: '#1B5E20'
+        };
 
     return (
       <AnimatePresence>
